@@ -15,5 +15,27 @@
   ],
   "posts_per_page": 5,
   "twitter_account": "@my-account",
-  "github_account": "wutali"
+  "github_account": "wutali",
+  "navigation_links": [
+    {
+      "name": "about",
+      "url": "/"
+    },
+    {
+      "name": "fiction writing",
+      "url": "/writing"
+    },
+    {
+      "name": "non-fiction writing",
+      "url": "/nonfiction"
+    },
+    {
+      "name": "videos",
+      "url": "/videos"
+    },
+    {
+      "name": "contact",
+      "url": "/contact"
+    }
+  ]
 }
