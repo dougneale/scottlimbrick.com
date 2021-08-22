@@ -1,92 +1,95 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import Burger from "./Burger";
-import { useState } from "react";
-
 export default function Navigation() {
-  const router = useRouter();
-  const [active, setActive] = useState(false);
   return (
-    <>
-      <Burger active={active} onClick={() => setActive(!active)} />
-      <div className={"container " + (active ? "active" : "")}>
-        <ul>
-          <li>
-            <Link href="/">
-              <a className={router.pathname === "/" ? "active" : null}>about</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/posts">
-              <a
-                className={
-                  router.pathname.startsWith("/posts") ? "active" : null
-                }
-              >
-                blog
-              </a>
-            </Link>
-          </li>
-        </ul>
-        <style jsx>
-          {`
-            .container {
-              width: 0;
-            }
-            ul {
-              opacity: 0;
-              width: 100%;
-              height: 100vh;
-              text-align: right;
-              list-style: none;
-              margin: 0;
-              padding: 0;
-              position: fixed;
-              top: 0;
-              background-color: #fff;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              z-index: 1;
-              transform: translateY(100%);
-              transition: opacity 200ms;
-            }
-            .active ul {
-              opacity: 1;
-              transform: translateY(0);
-            }
-            li {
-              margin-bottom: 1.75rem;
-              font-size: 2rem;
-              padding: 0 1.5rem 0 0;
-            }
-            li:last-child {
-              margin-bottom: 0;
-            }
-            .active {
-              color: #222;
-            }
+    <div id="topNav" className="float-left m-0 w-full text-center">
+    <nav
+      className="inline float-none relative bottom-0 mt-0 -mr-12 font-sans text-xl not-italic font-normal normal-case"
+    >
+      <ul
+        data-content-field="navigation"
+        className="inline float-none p-0 m-0 text-base not-italic leading-7"
+        // style="list-style: none none;"
+      >
+        <li
+          className="inline float-none relative mr-12"
+          // style="list-style: outside none none;"
+        >
+          <a
+            href="/"
+            className="inline-block not-italic leading-10 text-gray-700 no-underline normal-case cursor-pointer hover:text-black"
+            // style="list-style: outside none none;"
+            >about</a
+          >
+        </li>
 
-            @media (min-width: 769px) {
-              .container {
-                width: 7rem;
-                display: block;
-              }
-              ul {
-                opacity: 1;
-                width: 7rem;
-                top: auto;
-                display: block;
-                transform: translateY(0);
-              }
-              li {
-                font-size: 1rem;
-                padding: 0;
-              }
-            }
-          `}
-        </style>
-      </div>
-    </>
+        <li
+          className="inline float-none relative mr-12"
+          // style="list-style: outside none none;"
+        >
+          <a
+            className="inline-block not-italic leading-10 text-gray-700 no-underline normal-case cursor-pointer hover:text-black"
+            // style="list-style: outside none none;"
+            >writing</a
+          >
+          <div
+            className="overflow-hidden absolute mt-0 h-0 bg-white opacity-100"
+            // style="top: 100%; left: -22.5px; list-style: outside none none;"
+          >
+            <ul
+              className="block float-none overflow-hidden py-3 px-0 m-0 not-italic"
+              // style="list-style: none none;"
+            >
+              <li
+                className="block float-none relative m-0 w-full text-left"
+                // style="list-style: outside none none;"
+              >
+                <a
+                  href="/writing"
+                  className="block py-1 px-6 not-italic text-gray-700 no-underline normal-case cursor-pointer whitespace-no-wrap hover:text-black"
+                  // style="line-height: normal; list-style: outside none none;"
+                  >fiction</a
+                >
+              </li>
+
+              <li
+                className="block float-none relative m-0 w-full text-left"
+                // style="list-style: outside none none;"
+              >
+                <a
+                  href="/nonfiction"
+                  className="block py-1 px-6 not-italic text-gray-700 no-underline normal-case cursor-pointer whitespace-no-wrap hover:text-black"
+                  // style="line-height: normal; list-style: outside none none;"
+                  >non-fiction</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li
+          className="inline float-none relative mr-12"
+          // style="list-style: outside none none;"
+        >
+          <a
+            href="/videos"
+            className="inline-block not-italic leading-10 no-underline normal-case cursor-pointer hover:text-black"
+            // style="list-style: outside none none;"
+            >videos</a
+          >
+        </li>
+
+        <li
+          className="inline float-none relative mr-12"
+          // style="list-style: outside none none;"
+        >
+          <a
+            href="/contact"
+            className="inline-block not-italic leading-10 text-gray-700 no-underline normal-case cursor-pointer hover:text-black"
+            // style="list-style: outside none none;"
+            >contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
   );
 }

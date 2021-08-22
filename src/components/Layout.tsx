@@ -6,41 +6,33 @@ type Props = {
 };
 export default function Layout({ children }: Props) {
   return (
-    <div className="root">
-      <Head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="apple-touch-icon" href="/icon.png" />
-        <meta name="theme-color" content="#fff" />
-      </Head>
-      <nav>
-        <Navigation />
-      </nav>
+    <div className="p-5 tracking-wider leading-8 text-black">
+      <div id="headerWrapper" className="static leading-8 z-20">
+        <header id="header" className="relative pb-2 text-black clearfix">
+          <div
+            id="logo"
+            data-content-field="site-title"
+            className="mr-0 mb-2 w-full text-center"
+          >
+            <h1
+              className="inline-block m-0 font-sans text-4xl not-italic font-bold tracking-widest leading-5 lowercase"
+              data-shrink-original-size="42"
+              // style="letter-spacing: 0.0952381em;"
+            >
+              <a
+                href="/"
+                className="no-underline lowercase cursor-pointer hover:text-blue-600"
+                // style="line-height: 50.4px; letter-spacing: 4px;"
+              >
+                Scott Limbrick
+              </a>
+            </h1>
+          </div>
+          <Navigation />
+        </header>
+      </div>
       <main>{children}</main>
-      <style jsx>
-        {`
-          .root {
-            display: block;
-            padding: 4rem 0;
-            box-sizing: border-box;
-            height: 100%;
-          }
-          main {
-            display: flex;
-            min-height: 100%;
-          }
-          @media (min-width: 769px) {
-            .root {
-              display: flex;
-              flex: 1 0 auto;
-            }
-            main {
-              flex: 1 0 auto;
-            }
-          }
-        `}
-      </style>
+    
     </div>
   );
 }

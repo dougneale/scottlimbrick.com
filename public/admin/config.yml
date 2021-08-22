@@ -12,6 +12,28 @@ collections:
     editor:
       preview: false
     files:
+      - name: "homepage"
+        label: "Homepage Config"
+        file: "homepage.json"
+        description: "Homepage settings"
+        fields:
+          - label: "Homepage image"
+            name: "home_image"
+            widget: "image"
+            choose_url: true
+            media_library:
+              config:
+                multiple: true
+          - label: "Youtube Video URLS"
+            name: "youtube_video_urls"
+            widget: "list"
+            summary: "{{fields.url}}"
+            field:
+              label: URL
+              name: url
+              widget: "string"
+
+
       - name: "general"
         label: "Site Config"
         file: "config.json"
@@ -41,6 +63,18 @@ collections:
           - label: "GitHub account"
             name: "github_account"
             widget: "string"
+          - label: "Navigation Links"
+            name: "navigation_links"
+            widget: "list"
+            summary: "{{fields.name}} {{fields.url}}"
+            fields:
+              - label: Name
+                name: name
+                widget: "string"
+              - label: URL
+                name: url
+                widget: "string"
+
 
   - name: "meta"
     label: "Meta"
@@ -88,9 +122,9 @@ collections:
                 widget: "string"
                 hint: "Tag name for displaying on the site"
 
-  - name: "posts"
-    label: "Posts"
-    folder: "content/posts/"
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages/"
     extension: "mdx"
     format: "frontmatter"
     create: true
@@ -104,38 +138,42 @@ collections:
       - label: "Title"
         name: "title"
         widget: "string"
-      - label: "Publish Date"
-        name: "date"
-        widget: "datetime"
-        format: "YYYY-MM-DD"
-        dateFormat: "YYYY-MM-DD"
-        timeFormat: false
-      - label: Author
-        name: "author"
-        widget: relation
-        collection: "meta"
-        file: "authors"
-        searchFields:
-          - "authors.*.name"
-        displayFields:
-          - "authors.*.name"
-        valueField: "authors.*.slug"
-      - label: Tags
-        label_singular: "Tag"
-        name: "tags"
-        widget: list
-        summary: "{{fields.tag}}"
-        field:
-          label: Tag
-          name: tag
-          widget: relation
-          collection: "meta"
-          file: "tags"
-          searchFields:
-            - "tags.*.name"
-          displayFields:
-            - "tags.*.name"
-          valueField: "tags.*.slug"
       - label: "Body"
         name: "body"
         widget: "markdown"
+      - label: "Image"
+        name: "thumbnail"
+        widget: "image"
+        choose_url: true
+        media_library:
+          config:
+            multiple: true
+
+
+  - name: "menuItems"
+    label: "Menu Items"
+    folder: "content/menuItems/"
+    extension: "mdx"
+    format: "frontmatter"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: slug
+    summary: "{{title}}"
+    fields:
+      - label: "Slug"
+        name: "slug"
+        widget: "string"
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Description"
+        name: "description"
+        widget: "string"
+      - label: "Image"
+        name: "thumbnail"
+        widget: "image"
+        choose_url: true
+        media_library:
+          config:
+            multiple: true
+
