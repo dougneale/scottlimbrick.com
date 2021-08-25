@@ -6,14 +6,10 @@ type Props = {
 };
 export default function Layout({ children }: Props) {
   return (
-    <div className="p-5 tracking-wider leading-8 text-black">
-      <div id="headerWrapper" className="static leading-8 z-20">
-        <header id="header" className="relative pb-2 text-black clearfix">
-          <div
-            id="logo"
-            data-content-field="site-title"
-            className="mr-0 mb-2 w-full text-center"
-          >
+    <div className="tracking-wider py-10 leading-8 text-black">
+      <div className="z-20 pb-12">
+        <header className=" pb-2 text-black ">
+          <div className="mr-0 mb-2 w-full text-center">
             <h1
               className="inline-block m-0 font-sans text-4xl not-italic font-bold tracking-widest leading-5 lowercase"
               data-shrink-original-size="42"
@@ -31,8 +27,9 @@ export default function Layout({ children }: Props) {
           <Navigation />
         </header>
       </div>
-      <main>{children}</main>
-    
+      <main className="max-w-4xl m-auto  space-y-10 flex-col pb-8">
+        {children}
+      </main>
     </div>
   );
 }

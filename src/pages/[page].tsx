@@ -22,28 +22,19 @@ export type Props = {
 };
 
 const components = { InstagramEmbed, YouTube, TwitterTweetEmbed };
-const slugToPostContent = (postContents => {
-  let hash = {}
-  postContents.forEach(it => hash[it.slug] = it)
+const slugToPostContent = ((postContents) => {
+  let hash = {};
+  postContents.forEach((it) => (hash[it.slug] = it));
   return hash;
 })(fetchPostContent());
 
-export default function Story({
-  title,
-  source,
-}: any) {
-  const content = hydrate(source)
-  return (
-    <div className="container lg:w-2/3 space-y-10 flex-col pb-8">
-    <div className="prose space-y-8 mx-auto">
-    {content}
-  </div>
-  </div>
-  )
+export default function Story({ title, source }: any) {
+  const content = hydrate(source);
+  return <div className="prose space-y-8 mx-auto">{content}</div>;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = fetchPostContent().map(it => "/" + it.slug);
+  const paths = fetchPostContent().map((it) => "/" + it.slug);
   return {
     paths,
     fallback: false,
@@ -51,11 +42,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  console.log(params)
+  console.log(params);
   const slug = params.page as string;
   const source = fs.readFileSync(slugToPostContent[slug].fullPath, "utf8");
   const { content, data } = matter(source, {
-    engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object }
+    engines: {
+      yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
+    },
   });
   const mdxSource = await renderToString(content, { components, scope: data });
   return {
@@ -66,8 +59,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       // description: "",
       // tags: data.tags,
       // author: data.author,
-      source: mdxSource
+      source: mdxSource,
     },
   };
 };
-
