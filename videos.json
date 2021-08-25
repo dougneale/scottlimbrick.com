@@ -1,0 +1,9 @@
+{
+  "body": "This is the description",
+  "video_urls": [
+    {
+      "url": "https://www.youtube.com/watch?v=sMtr1DLZ-C4",
+      "description": "Video description"
+    }
+  ]
+}
