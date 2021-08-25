@@ -1,21 +1,21 @@
 {
-  "body": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/sMtr1DLZ-C4\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+  "body": "This is the intro text",
   "video_urls": [
     {
-      "url": "https://www.youtube.com/watch?v=sMtr1DLZ-C4",
+      "url": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/sMtr1DLZ-C4\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
       "description": "Video description"
     },
     {
-      "url": "https://www.youtube.com/watch?v=AY8n-KggmXs",
+      "url": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/sMtr1DLZ-C4\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
       "description": "Another description"
     },
     {
-      "url": "https://www.youtube.com/watch?v=AY8n-KggmXs",
+      "url": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/sMtr1DLZ-C4\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
       "description": "Another description"
     },
     {
-      "url": "https://www.youtube.com/watch?v=AY8n-KggmXs",
-      "description": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/sMtr1DLZ-C4\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+      "url": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/sMtr1DLZ-C4\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+      "description": "Description"
     }
   ]
 }
