@@ -1,5 +1,13 @@
 module.exports = ({
   pageExtensions: ["tsx"],
+  async rewrites() {
+    return [
+      {
+        source: '/index.html',
+        destination: '/about',
+      },
+    ]
+  },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.module.rules.push(
       ...[

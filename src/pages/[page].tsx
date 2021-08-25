@@ -30,14 +30,11 @@ const slugToPostContent = (postContents => {
 
 export default function Story({
   title,
-  image,
   source,
 }: any) {
   const content = hydrate(source)
   return (
     <div className="container lg:w-2/3 space-y-10 flex-col pb-8">
-    <h1 className="text-3xl">{title}</h1>
-    <img className="rounded-full w-1/2 m-auto" src={image} />
     <div className="prose space-y-8 mx-auto">
     {content}
   </div>
@@ -69,7 +66,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       // description: "",
       // tags: data.tags,
       // author: data.author,
-      image: data.thumbnail,
       source: mdxSource
     },
   };
